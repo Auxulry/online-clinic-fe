@@ -7,6 +7,7 @@ import {getStorage, setStorages} from "@/utils/storage";
 import {useRouter} from "next/navigation";
 import Joi from 'joi'
 import {post} from "@/utils/interceptors";
+import Link from "next/link";
 
 export default function Register() {
   const router = useRouter();
@@ -222,7 +223,10 @@ export default function Register() {
         </div>
       </form>
       <p className='text-xs w-4/5 text-center'>
-        Sudah memiliki akun? <a className='underline font-bold' href='#'>Masuk</a>
+        Sudah memiliki akun? &nbsp;
+        <Link href={'/auth/login'} className='underline font-bold'>
+          Masuk
+        </Link>
       </p>
     </main>
   )

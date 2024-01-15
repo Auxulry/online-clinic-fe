@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import {post} from "@/utils/interceptors";
 import {getStorage, setStorages} from "@/utils/storage";
 import {useRouter} from "next/navigation";
+import Link from "next/link";
 
 
 export default function Login() {
@@ -137,8 +138,12 @@ export default function Login() {
           </button>
         </div>
       </form>
+
       <p className='text-xs w-4/5 text-center'>
-        Belum punya akun? <a className='underline font-bold' href='#'>Register</a>
+        Belum punya akun? &nbsp;
+        <Link href={'/auth/register'} className='underline font-bold'>
+          Register
+        </Link>
       </p>
       <div className='absolute w-4/5 bottom-0 p-4 text-center text-sm'>Forgot Password?</div>
     </main>

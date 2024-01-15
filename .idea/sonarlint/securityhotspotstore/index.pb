@@ -13,10 +13,6 @@ C
 src/app/globals.css,d/a/da1d6f21d01d0f36b5501dffcf7fd160ffcb290d
 =
 .editorconfig,6/2/626a747c8694eaae66f2afb3d1a745b045782c70
-J
-src/app/forgot-password.js,a/b/aba1ed685d231f1103c7677252c840a63176de41
-P
- src/app/forgot-password/index.js,f/e/fee21302b6fceb0c249c4b0e8876d369f154f0b2
 O
 src/app/forgot-password/page.js,9/6/9693061d5d1c8a563dc832ea9bce60edf9653c61
 N

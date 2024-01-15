@@ -23,7 +23,7 @@ export default function Queue() {
   }, []);
 
   return (
-    <main className="max-w-screen-sm mx-auto h-screen flex flex-col items-center gap-4 pt-32 pb-4 pr-8 pl-8 bg-white">
+    <main className="max-w-screen-sm mx-auto h-screen flex flex-col items-center gap-4 pt-32 pb-4 pr-8 pl-8 bg-white relative">
       <div className='absolute left-4 top-12 flex flex-row gap-2 items-center' onClick={() => router.push('/')}>
         <IoArrowBackOutline />
         <div className='text-sm font-bold text-left'>Kembali</div>
