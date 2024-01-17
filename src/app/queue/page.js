@@ -9,6 +9,7 @@ export default function Queue() {
   const router = useRouter()
 
   const [polis, setPolis] = useState([])
+  const [user, setUser] = useState()
 
   useEffect(() => {
     const storage = getStorage('_clinic_token');
@@ -19,6 +20,9 @@ export default function Queue() {
   useEffect(() => {
     get('polis?page=1&itemPerPage=20000').then((res) => {
       setPolis(res?.data?.data?.items)
+    })
+    get('authentication/me').then((res) => {
+      setUser(res?.data?.data)
     })
   }, []);
 
@@ -48,9 +52,16 @@ export default function Queue() {
           </div>
         </div>
       ))}
-      <button type="button" onClick={() => router.push('/queue/form')} className="mx-auto w-4/5 bg-slate-900 hover:bg-slate-950 focus:outline-none focus:ring focus:ring-slate-700 active:bg-slate-950 px-5 py-2 text-sm leading-5 rounded font-semibold text-white">
-        Daftar Antrean
-      </button>
+      {!user?.is_admin && (
+        <button type="button" onClick={() => router.push('/queue/form')} className="mx-auto w-4/5 bg-slate-900 hover:bg-slate-950 focus:outline-none focus:ring focus:ring-slate-700 active:bg-slate-950 px-5 py-2 text-sm leading-5 rounded font-semibold text-white">
+          Daftar Antrean
+        </button>
+      )}
+      {user?.is_admin && (
+        <button type="button" onClick={() => router.push('/queue/poli')} className="mx-auto w-4/5 bg-slate-900 hover:bg-slate-950 focus:outline-none focus:ring focus:ring-slate-700 active:bg-slate-950 px-5 py-2 text-sm leading-5 rounded font-semibold text-white">
+          Buat Poli
+        </button>
+      )}
     </main>
   )
 }
